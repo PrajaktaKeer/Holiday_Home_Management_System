@@ -19,7 +19,7 @@ public class MysqlConnect {
             //Class.forName("com.mysql.jdbc.Driver");
             //Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/sl3_a5","root","password");
             
-Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/holiday_home_management", "root", "password");
+Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/holiday_home_management", "root", "");
             //JOptionPane.showMessageDialog(null, "connected to database");
             return conn;
             

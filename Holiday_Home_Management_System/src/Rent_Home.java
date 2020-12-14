@@ -1,5 +1,7 @@
 
+import java.awt.Dimension;
 import java.awt.Image;
+import java.awt.Toolkit;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -37,7 +39,15 @@ public class Rent_Home extends javax.swing.JFrame {
         this.setTitle("Happy Holidays");
         this.setVisible(true);
         this.setLocationRelativeTo(null);
-        logo.setIcon(new ImageIcon(new javax.swing.ImageIcon(getClass().getResource("logo.jpeg")).getImage().getScaledInstance(150, 150, Image.SCALE_SMOOTH)));
+        this.makeFrameFullSize(this);
+        logo2.setIcon(new ImageIcon(new javax.swing.ImageIcon(getClass().getResource("logo1.png")).getImage().getScaledInstance(260, 86, Image.SCALE_SMOOTH)));
+
+        logo.setIcon(new ImageIcon(new javax.swing.ImageIcon(getClass().getResource("home3.jpeg")).getImage().getScaledInstance(logo.getWidth(), logo.getHeight(), Image.SCALE_SMOOTH)));
+    }
+    private void makeFrameFullSize(JFrame aFrame) {
+    Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+    aFrame.setSize(screenSize.width, screenSize.height);
+
     }
 
     /**
@@ -50,28 +60,30 @@ public class Rent_Home extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
-        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        logo2 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         logo = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        btn_clear = new javax.swing.JButton();
-        btn_add = new javax.swing.JButton();
-        txt_cost = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
         txt_av_from = new datechooser.beans.DateChooserCombo();
+        jLabel18 = new javax.swing.JLabel();
         txt_av_to = new datechooser.beans.DateChooserCombo();
-        txt_loc = new javax.swing.JComboBox<>();
+        jLabel14 = new javax.swing.JLabel();
+        txt_cost = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        check_kitchen = new javax.swing.JCheckBox();
-        check_bed = new javax.swing.JCheckBox();
-        check_hot_water = new javax.swing.JCheckBox();
-        check_air = new javax.swing.JCheckBox();
         jLabel20 = new javax.swing.JLabel();
-        btn_upload = new javax.swing.JButton();
         txt_img = new javax.swing.JTextField();
-        jLabel21 = new javax.swing.JLabel();
+        btn_upload = new javax.swing.JButton();
+        txt_loc = new javax.swing.JComboBox<>();
+        check_hot_water = new javax.swing.JCheckBox();
+        check_bed = new javax.swing.JCheckBox();
+        check_air = new javax.swing.JCheckBox();
+        check_kitchen = new javax.swing.JCheckBox();
+        btn_add = new javax.swing.JButton();
+        btn_clear = new javax.swing.JButton();
         jMenuBar2 = new javax.swing.JMenuBar();
         menu_cust = new javax.swing.JMenu();
         menu_host = new javax.swing.JMenu();
@@ -82,17 +94,46 @@ public class Rent_Home extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(186, 240, 231));
-        jPanel1.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                jPanel1FocusGained(evt);
-            }
-        });
+        jPanel2.setBackground(new java.awt.Color(181, 240, 233));
+
+        jPanel3.setBackground(new java.awt.Color(51, 102, 255));
+
+        logo2.setText("jLabel2");
+
+        jLabel10.setFont(new java.awt.Font("Algerian", 2, 36)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Add A home to rent");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(logo2, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(125, 125, 125)
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(logo2, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10))
+                .addContainerGap())
+        );
 
         logo.setText("jLabel1");
 
         jLabel13.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
         jLabel13.setText("Availablity");
+
+        jLabel17.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLabel17.setText("From");
+
+        jLabel18.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLabel18.setText("To");
 
         jLabel14.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
         jLabel14.setText("Cost");
@@ -100,13 +141,35 @@ public class Rent_Home extends javax.swing.JFrame {
         jLabel16.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
         jLabel16.setText("Facilities");
 
-        btn_clear.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
-        btn_clear.setText("Clear");
-        btn_clear.addActionListener(new java.awt.event.ActionListener() {
+        jLabel19.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLabel19.setText("Location");
+
+        jLabel20.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLabel20.setText("Images For Home");
+
+        txt_img.setEditable(false);
+
+        btn_upload.setText("Upload File");
+        btn_upload.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_clearActionPerformed(evt);
+                btn_uploadActionPerformed(evt);
             }
         });
+
+        txt_loc.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mumbai ", "Pune", "Goa", "Null" }));
+        txt_loc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_locActionPerformed(evt);
+            }
+        });
+
+        check_hot_water.setText("Hot Water System");
+
+        check_bed.setText("Bed");
+
+        check_air.setText("Air Conditioner");
+
+        check_kitchen.setText("Kitchen");
 
         btn_add.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         btn_add.setText("Add Home");
@@ -116,154 +179,112 @@ public class Rent_Home extends javax.swing.JFrame {
             }
         });
 
-        jLabel17.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
-        jLabel17.setText("From");
-
-        jLabel18.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
-        jLabel18.setText("To");
-
-        txt_loc.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mumbai ", "Pune", "Goa", "Null" }));
-        txt_loc.addActionListener(new java.awt.event.ActionListener() {
+        btn_clear.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        btn_clear.setText("Clear");
+        btn_clear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_locActionPerformed(evt);
+                btn_clearActionPerformed(evt);
             }
         });
 
-        jLabel19.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
-        jLabel19.setText("Location");
-
-        check_kitchen.setText("Kitchen");
-
-        check_bed.setText("Bed");
-
-        check_hot_water.setText("Hot Water System");
-
-        check_air.setText("Air Conditioner");
-
-        jLabel20.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
-        jLabel20.setText("Images For Home");
-
-        btn_upload.setText("Upload File");
-        btn_upload.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_uploadActionPerformed(evt);
-            }
-        });
-
-        txt_img.setEditable(false);
-
-        jLabel21.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
-        jLabel21.setText("Add A Home For Renting");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(247, 247, 247)
-                .addComponent(btn_add, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(167, 167, 167)
-                .addComponent(btn_clear, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(txt_img))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(check_hot_water)
-                                            .addComponent(txt_loc, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(check_bed))))
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(170, 170, 170)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txt_cost, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(check_hot_water)
                                 .addGap(18, 18, 18)
-                                .addComponent(btn_upload, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(txt_cost, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(52, 52, 52)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(check_kitchen)
-                                            .addComponent(check_air)))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(63, 63, 63)
-                                        .addComponent(txt_av_from, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
-                                        .addComponent(jLabel18)
-                                        .addGap(42, 42, 42)
-                                        .addComponent(txt_av_to, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGap(44, 44, 44))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(168, 168, 168)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                                .addComponent(check_kitchen))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(check_bed)
+                                .addGap(90, 90, 90)
+                                .addComponent(check_air))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txt_loc, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(53, 53, 53)
+                        .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txt_av_from, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel18)
+                        .addGap(18, 18, 18)
+                        .addComponent(txt_av_to, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(168, 168, 168)
+                                .addComponent(txt_img, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(114, 114, 114)
+                                .addComponent(btn_add, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btn_clear, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_upload, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(3, 44, Short.MAX_VALUE)
+                .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(26, 26, 26)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(txt_av_to, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txt_av_from, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(7, 7, 7)))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txt_av_from, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txt_av_to, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel17)))
+                        .addGap(36, 36, 36)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txt_cost, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txt_cost, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(16, 16, 16)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(check_bed)
                             .addComponent(check_air)
                             .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(22, 22, 22)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(check_kitchen)
-                            .addComponent(check_hot_water))))
-                .addGap(48, 48, 48)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_loc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_upload)
-                    .addComponent(txt_img, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_add)
-                    .addComponent(btn_clear))
-                .addGap(44, 44, 44))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(check_hot_water)
+                            .addComponent(check_kitchen))
+                        .addGap(31, 31, 31)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txt_loc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel19))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_img, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_upload))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btn_clear)
+                            .addComponent(btn_add))))
+                .addGap(38, 56, Short.MAX_VALUE))
         );
 
         menu_cust.setText("Register As Customer");
@@ -315,38 +336,90 @@ public class Rent_Home extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_clearActionPerformed
+    private void menu_custMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu_custMouseClicked
         // TODO add your handling code here:
-        txt_cost.setText(null);
-        txt_loc.setSelectedItem("Null");
-        check_bed.setSelected(false);
-        check_kitchen.setSelected(false);
-        check_hot_water.setSelected(false);
-        check_air.setSelected(false);
-    }//GEN-LAST:event_btn_clearActionPerformed
+        if(Login_Form.special_account_type.equals("Customer")) {
+            this.setVisible(false);
+            new Reg_Customer().setVisible(true);
+         }
+         else {
+            JOptionPane.showMessageDialog(null, "You have not logged in Customer", "Access Denied", JOptionPane.ERROR_MESSAGE);
+
+        }
+    }//GEN-LAST:event_menu_custMouseClicked
+
+    private void menu_hostMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu_hostMouseClicked
+        // TODO add your handling code here:
+        if(Login_Form.special_account_type.equals("Host")) {
+            this.setVisible(false);
+            new Reg_Host().setVisible(true);
+         }
+         else {
+            JOptionPane.showMessageDialog(null, "You have not logged in as Host", "Access Denied", JOptionPane.ERROR_MESSAGE);
+
+        }
+    }//GEN-LAST:event_menu_hostMouseClicked
+
+    private void menu_bookMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu_bookMouseClicked
+        // TODO add your handling code here:
+        if(Login_Form.special_account_type.equals("Customer")) {
+            this.setVisible(false);
+            new Book_Home().setVisible(true);
+         }
+         else {
+            JOptionPane.showMessageDialog(null, "You have not logged in as Customer", "Access Denied", JOptionPane.ERROR_MESSAGE);
+
+        }
+    }//GEN-LAST:event_menu_bookMouseClicked
+
+    private void menu_profileMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu_profileMouseClicked
+        // TODO add your handling code here:
+        if(Login_Form.special_account_type.equals("Customer")) {
+            this.setVisible(false);
+            new Update_Profile().setVisible(true);
+         }
+         else {
+            this.setVisible(false);
+            new Update_Profile_Host().setVisible(true);
+        }
+    }//GEN-LAST:event_menu_profileMouseClicked
+
+    private void menu_logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu_logoutMouseClicked
+        // TODO add your handling code here:
+        this.setVisible(false);
+        new Login_Form().setVisible(true);
+    }//GEN-LAST:event_menu_logoutMouseClicked
+
+    private void btn_uploadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_uploadActionPerformed
+        // TODO add your handling code here:
+        new Upload_File().setVisible(true);
+    }//GEN-LAST:event_btn_uploadActionPerformed
+
+    private void txt_locActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_locActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_locActionPerformed
 
     private void btn_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addActionPerformed
         // TODO add your handling code here:
         txt_img.setText(Upload_File.filename);
         int host_id = 0, house_id = 0;
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
-        
-        
+
         String sql_get = "select host_id from host where pers_id = " + Login_Form.special_person_id;
         Connection con = MysqlConnect.ConnectDb();
         //extracting host id
         try {
-            
+
             PreparedStatement ps = con.prepareStatement(sql_get);
             //ps.setInt(1, Login_Form.special_person_id);
             ResultSet rs = ps.executeQuery();
@@ -359,11 +432,10 @@ public class Rent_Home extends javax.swing.JFrame {
         }
         System.out.println(host_id);
         //System.out.println(Login_Form.special_person_id);
-        
+
         if(host_id != 0) {
             String sql_ins = "insert into house(availablity_from, availablity_to, cost, img_file, host_id, location) values(?, ?, ?, ?, ?, ?)";
-            
-            
+
             //inserting into house table
             try {
                 ///Connection conn = MysqlConnect.ConnectDb();
@@ -375,7 +447,7 @@ public class Rent_Home extends javax.swing.JFrame {
                 ps1.setBlob(4, in);
                 ps1.setInt(5, host_id);
                 ps1.setString(6, (String)txt_loc.getSelectedItem());
-                
+
                 ps1.execute();
                 JOptionPane.showMessageDialog(null, "Registration Successful");
             }
@@ -401,7 +473,7 @@ public class Rent_Home extends javax.swing.JFrame {
             }
 
             //inserting into facilities table
-            String fac_name = ""; 
+            String fac_name = "";
             if(check_bed.isSelected() == true) {
                 fac_name = "Bed";
                 String sql_ins_fac = "insert into facilities(house_id, facility_name) values(" + house_id + ",'" + fac_name +"')";
@@ -462,78 +534,21 @@ public class Rent_Home extends javax.swing.JFrame {
             new welcome().setVisible(true);
         }
         else {
-           JOptionPane.showMessageDialog(null, "You need to first register as a Host"); 
-           this.setVisible(false);
+            JOptionPane.showMessageDialog(null, "You need to first register as a Host");
+            this.setVisible(false);
             new Reg_Host().setVisible(true);
         }
     }//GEN-LAST:event_btn_addActionPerformed
 
-    private void txt_locActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_locActionPerformed
+    private void btn_clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_clearActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt_locActionPerformed
-
-    private void btn_uploadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_uploadActionPerformed
-        // TODO add your handling code here:
-        new Upload_File().setVisible(true);
-    }//GEN-LAST:event_btn_uploadActionPerformed
-
-    private void jPanel1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jPanel1FocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jPanel1FocusGained
-
-    private void menu_custMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu_custMouseClicked
-        // TODO add your handling code here:
-        if(Login_Form.special_account_type.equals("Customer")) {
-            this.setVisible(false);
-            new Reg_Customer().setVisible(true);
-         }
-         else {
-            JOptionPane.showMessageDialog(null, "You have not logged in Customer", "Access Denied", JOptionPane.ERROR_MESSAGE);
-
-        }
-    }//GEN-LAST:event_menu_custMouseClicked
-
-    private void menu_hostMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu_hostMouseClicked
-        // TODO add your handling code here:
-        if(Login_Form.special_account_type.equals("Host")) {
-            this.setVisible(false);
-            new Reg_Host().setVisible(true);
-         }
-         else {
-            JOptionPane.showMessageDialog(null, "You have not logged in as Host", "Access Denied", JOptionPane.ERROR_MESSAGE);
-
-        }
-    }//GEN-LAST:event_menu_hostMouseClicked
-
-    private void menu_bookMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu_bookMouseClicked
-        // TODO add your handling code here:
-        if(Login_Form.special_account_type.equals("Customer")) {
-            this.setVisible(false);
-            new Book_Home().setVisible(true);
-         }
-         else {
-            JOptionPane.showMessageDialog(null, "You have not logged in as Customer", "Access Denied", JOptionPane.ERROR_MESSAGE);
-
-        }
-    }//GEN-LAST:event_menu_bookMouseClicked
-
-    private void menu_profileMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu_profileMouseClicked
-        // TODO add your handling code here:
-        if(Login_Form.special_account_type.equals("Customer")) {
-            this.setVisible(false);
-            new Update_Profile().setVisible(true);
-         }
-         else {
-            this.setVisible(false);
-            new Update_Profile_Host().setVisible(true);
-        }
-    }//GEN-LAST:event_menu_profileMouseClicked
-
-    private void menu_logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu_logoutMouseClicked
-        // TODO add your handling code here:
-        this.setVisible(false);
-        new Login_Form().setVisible(true);
-    }//GEN-LAST:event_menu_logoutMouseClicked
+        txt_cost.setText(null);
+        txt_loc.setSelectedItem("Null");
+        check_bed.setSelected(false);
+        check_kitchen.setSelected(false);
+        check_hot_water.setSelected(false);
+        check_air.setSelected(false);
+    }//GEN-LAST:event_btn_clearActionPerformed
 
     
     /**
@@ -580,6 +595,7 @@ public class Rent_Home extends javax.swing.JFrame {
     private javax.swing.JCheckBox check_bed;
     private javax.swing.JCheckBox check_hot_water;
     private javax.swing.JCheckBox check_kitchen;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel16;
@@ -587,11 +603,12 @@ public class Rent_Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JMenu jMenu10;
     private javax.swing.JMenuBar jMenuBar2;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel logo;
+    private javax.swing.JLabel logo2;
     private javax.swing.JMenu menu_book;
     private javax.swing.JMenu menu_cust;
     private javax.swing.JMenu menu_host;

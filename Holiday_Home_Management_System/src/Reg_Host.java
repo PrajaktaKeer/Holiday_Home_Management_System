@@ -1,5 +1,7 @@
 
+import java.awt.Dimension;
 import java.awt.Image;
+import java.awt.Toolkit;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -33,10 +35,19 @@ public class Reg_Host extends javax.swing.JFrame {
         this.setTitle("Happy Holidays");
         this.setVisible(true);
         this.setLocationRelativeTo(null);
-logo.setIcon(new ImageIcon(new javax.swing.ImageIcon(getClass().getResource("logo.jpeg")).getImage().getScaledInstance(150, 150, Image.SCALE_SMOOTH)));
-        txt_acc_type.setSelectedItem("Null");
-    }
+                logo2.setIcon(new ImageIcon(new javax.swing.ImageIcon(getClass().getResource("logo1.png")).getImage().getScaledInstance(260, 86, Image.SCALE_SMOOTH)));
 
+logo.setIcon(new ImageIcon(new javax.swing.ImageIcon(getClass().getResource("home2.jpeg")).getImage().getScaledInstance(logo.getWidth(), logo.getHeight(), Image.SCALE_SMOOTH)));
+logo1.setIcon(new ImageIcon(new javax.swing.ImageIcon(getClass().getResource("home5.jpeg")).getImage().getScaledInstance(logo1.getWidth(), logo1.getHeight(), Image.SCALE_SMOOTH)));
+        
+txt_acc_type.setSelectedItem("Null");
+        this.makeFrameFullSize(this);
+    }
+private void makeFrameFullSize(JFrame aFrame) {
+    Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+    aFrame.setSize(screenSize.width, screenSize.height);
+
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -49,17 +60,22 @@ logo.setIcon(new ImageIcon(new javax.swing.ImageIcon(getClass().getResource("log
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        logo = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        logo2 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        btn_clr = new javax.swing.JButton();
-        btn_reg1 = new javax.swing.JButton();
-        txt_bank = new javax.swing.JTextField();
-        txt_acc_type = new javax.swing.JComboBox<>();
         txt_acc_no = new javax.swing.JTextField();
         alab = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        txt_bank = new javax.swing.JTextField();
         nlab = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        txt_acc_type = new javax.swing.JComboBox<>();
+        btn_reg1 = new javax.swing.JButton();
+        btn_clr = new javax.swing.JButton();
+        logo = new javax.swing.JLabel();
+        nlab1 = new javax.swing.JLabel();
+        logo1 = new javax.swing.JLabel();
         jMenuBar2 = new javax.swing.JMenuBar();
         menu_cust = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
@@ -72,40 +88,39 @@ logo.setIcon(new ImageIcon(new javax.swing.ImageIcon(getClass().getResource("log
 
         jPanel1.setBackground(new java.awt.Color(181, 240, 233));
 
-        logo.setText("jLabel1");
+        jPanel2.setBackground(new java.awt.Color(51, 102, 255));
+
+        jLabel10.setFont(new java.awt.Font("Algerian", 2, 36)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("HOst Account Details");
+
+        logo2.setText("jLabel2");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(logo2, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 523, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(logo2, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 11, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel10)
+                .addGap(29, 29, 29))
+        );
 
         jLabel13.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
         jLabel13.setText("Account Number");
-
-        jLabel14.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
-        jLabel14.setText("Bank Name");
-
-        jLabel15.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
-        jLabel15.setText("Account Type");
-
-        btn_clr.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
-        btn_clr.setText("Clear");
-        btn_clr.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_clrActionPerformed(evt);
-            }
-        });
-
-        btn_reg1.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
-        btn_reg1.setText("Register");
-        btn_reg1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_reg1ActionPerformed(evt);
-            }
-        });
-
-        txt_bank.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txt_bankKeyReleased(evt);
-            }
-        });
-
-        txt_acc_type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Savings", "Current", "Null" }));
 
         txt_acc_no.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -115,77 +130,120 @@ logo.setIcon(new ImageIcon(new javax.swing.ImageIcon(getClass().getResource("log
 
         alab.setForeground(new java.awt.Color(231, 20, 50));
 
+        jLabel14.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLabel14.setText("Bank Name");
+
+        txt_bank.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txt_bankKeyReleased(evt);
+            }
+        });
+
         nlab.setForeground(new java.awt.Color(231, 20, 50));
+
+        jLabel15.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLabel15.setText("Account Type");
+
+        txt_acc_type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Savings", "Current", "Null" }));
+
+        btn_reg1.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        btn_reg1.setText("Register");
+        btn_reg1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_reg1ActionPerformed(evt);
+            }
+        });
+
+        btn_clr.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        btn_clr.setText("Clear");
+        btn_clr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_clrActionPerformed(evt);
+            }
+        });
+
+        logo.setText("jLabel1");
+
+        nlab1.setForeground(new java.awt.Color(231, 20, 50));
+
+        logo1.setText("jLabel1");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGap(448, 448, 448)
+                        .addComponent(alab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(37, 37, 37)
-                                .addComponent(txt_acc_type, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(txt_acc_type, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txt_bank, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(37, 37, 37)
-                                .addComponent(txt_acc_no, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txt_bank, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txt_acc_no, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(alab, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(26, 26, 26)
-                                .addComponent(nlab, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(219, 219, 219)
-                        .addComponent(btn_reg1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(108, 108, 108)
-                        .addComponent(btn_clr, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(226, Short.MAX_VALUE))
+                            .addComponent(nlab, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nlab1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(143, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(118, 118, 118)
+                .addComponent(btn_reg1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(166, 166, 166)
+                .addComponent(btn_clr, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(92, 92, 92)
+                .addComponent(logo1, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(56, 56, 56)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txt_acc_no, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(alab, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(alab, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_acc_no, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nlab, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(26, 26, 26)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(35, 35, 35)
-                                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(27, 27, 27)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(nlab, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txt_bank, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addGap(17, 17, 17)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_acc_type, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(74, 74, 74)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_reg1)
-                    .addComponent(btn_clr))
-                .addContainerGap(113, Short.MAX_VALUE))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txt_bank, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(29, 29, 29)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txt_acc_type, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(nlab1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(7, 7, 7)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btn_reg1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_clr, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(logo1, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         menu_cust.setText("Register As Customer");
@@ -246,50 +304,6 @@ logo.setIcon(new ImageIcon(new javax.swing.ImageIcon(getClass().getResource("log
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btn_clrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_clrActionPerformed
-        txt_acc_no.setText(null);
-        txt_bank.setText(null);
-        txt_acc_type.setSelectedItem("Null");
-    }//GEN-LAST:event_btn_clrActionPerformed
-
-    private void btn_reg1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_reg1ActionPerformed
-        // TODO add your handling code here:
-        String q1 = "select * from host where pers_id = " + Login_Form.special_person_id;
-        try {
-            Connection con = MysqlConnect.ConnectDb();
-            PreparedStatement ps = con.prepareStatement(q1);
-            ResultSet rs = ps.executeQuery();
-            if(rs.next() != false ) {
-                JOptionPane.showMessageDialog(null, "You already have registered as a Host");
-            }
-            else {
-                if(Login_Form.special_account_type.equals("Host")) {
-                    String sql = "insert into host (pers_id, account_no, bank_name, account_type) values (" + x + ","+ txt_acc_no.getText() + ",'" + txt_bank.getText() + "','" + (String)txt_acc_type.getSelectedItem() + "')";
-
-                    try {
-                        Connection conn = MysqlConnect.ConnectDb();
-                        Statement st = conn.createStatement();
-                        st.executeUpdate(sql);
-                        JOptionPane.showMessageDialog(null, "Registration Successful");
-                    }
-                    catch(SQLException ex) {
-                        System.out.println("Insert Error" + ex);
-                    }
-
-                    this.setVisible(false);
-                    new welcome().setVisible(true);
-                }
-                else {
-                    JOptionPane.showMessageDialog(null, "You have not signed up as Host", "Access Denied", JOptionPane.ERROR_MESSAGE);
-                }
-            }
-        }
-        catch (SQLException e) {
-            // TODO Auto-generated catch block
-             JOptionPane.showMessageDialog(null, e);
-        }
-    }//GEN-LAST:event_btn_reg1ActionPerformed
 
     private void menu_custMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu_custMouseClicked
         // TODO add your handling code here:
@@ -375,6 +389,50 @@ logo.setIcon(new ImageIcon(new javax.swing.ImageIcon(getClass().getResource("log
         }
     }//GEN-LAST:event_txt_bankKeyReleased
 
+    private void btn_reg1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_reg1ActionPerformed
+        // TODO add your handling code here:
+        String q1 = "select * from host where pers_id = " + Login_Form.special_person_id;
+        try {
+            Connection con = MysqlConnect.ConnectDb();
+            PreparedStatement ps = con.prepareStatement(q1);
+            ResultSet rs = ps.executeQuery();
+            if(rs.next() != false ) {
+                JOptionPane.showMessageDialog(null, "You already have registered as a Host");
+            }
+            else {
+                if(Login_Form.special_account_type.equals("Host")) {
+                    String sql = "insert into host (pers_id, account_no, bank_name, account_type) values (" + x + ","+ txt_acc_no.getText() + ",'" + txt_bank.getText() + "','" + (String)txt_acc_type.getSelectedItem() + "')";
+
+                    try {
+                        Connection conn = MysqlConnect.ConnectDb();
+                        Statement st = conn.createStatement();
+                        st.executeUpdate(sql);
+                        JOptionPane.showMessageDialog(null, "Registration Successful");
+                    }
+                    catch(SQLException ex) {
+                        System.out.println("Insert Error" + ex);
+                    }
+
+                    this.setVisible(false);
+                    new welcome().setVisible(true);
+                }
+                else {
+                    JOptionPane.showMessageDialog(null, "You have not signed up as Host", "Access Denied", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        }
+        catch (SQLException e) {
+            // TODO Auto-generated catch block
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }//GEN-LAST:event_btn_reg1ActionPerformed
+
+    private void btn_clrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_clrActionPerformed
+        txt_acc_no.setText(null);
+        txt_bank.setText(null);
+        txt_acc_type.setSelectedItem("Null");
+    }//GEN-LAST:event_btn_clrActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -414,19 +472,24 @@ logo.setIcon(new ImageIcon(new javax.swing.ImageIcon(getClass().getResource("log
     private javax.swing.JLabel alab;
     private javax.swing.JButton btn_clr;
     private javax.swing.JButton btn_reg1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel logo;
+    private javax.swing.JLabel logo1;
+    private javax.swing.JLabel logo2;
     private javax.swing.JMenu menu_book;
     private javax.swing.JMenu menu_cust;
     private javax.swing.JMenu menu_logout;
     private javax.swing.JMenu menu_profile;
     private javax.swing.JMenu menu_rent;
     private javax.swing.JLabel nlab;
+    private javax.swing.JLabel nlab1;
     private javax.swing.JTextField txt_acc_no;
     private javax.swing.JComboBox<String> txt_acc_type;
     private javax.swing.JTextField txt_bank;
